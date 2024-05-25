@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.cube {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -150px; /* Adjust this value to position the cube above the name */
+    left: calc(50% - 50px); /* Center horizontally */
+    transform-style: preserve-3d;
+    animation: rotateCube 5s linear infinite;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.front { transform: translateZ(50px); }
+.back { transform: translateZ(-50px) rotateY(180deg); }
+.right { transform: rotateY(90deg) translateZ(50px); }
+.left { transform: rotateY(-90deg) translateZ(50px); }
+.top { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+h1 {
+    color: #4b535c;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: Arial, sans-serif; /* Use the same font as the cube */
+}
+
+#subtext {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    opacity: 0; /* Initially hidden */
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section {
+    margin: 10px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.section-header {
+    padding: 10px;
+    background-color: #4d545c;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    transition: max-height 0.3s ease;
+}
+
+.section-content p {
+    padding: 10px;
+    margin: 0;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
