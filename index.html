@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Imran</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="cube" id="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
     <div class="container">
-        <!-- Cube -->
-        <div class="cube" id="cube">
-            <div class="face front">&</div>
-            <div class="face back">%</div>
-            <div class="face right">£</div>
-            <div class="face left">$</div>
-            <div class="face top">*</div>
-            <div class="face bottom">:</div>
-        </div>
         <!-- Main title -->
         <h1 id="main-title">Muhammad Imran</h1>
         <!-- Subtext -->
         <div id="subtext" class="hidden">
-            <a href="https://openai.com/en-GB/" target="_blank">umerbtc@protonmail.com</a>
+            umerbtc@protonmail.com
         </div>
         <!-- Sections -->
         <div class="sections">
             <div class="section" id="section1">
                 <div class="section-header" onclick="toggleSection('section1')">Front end web development</div>
+                <div class="section-notch"></div>
                 <div class="section-content">
                     <p>Details about Topic 1...</p>
                 </div>
             </div>
             <div class="section" id="section2">
                 <div class="section-header" onclick="toggleSection('section2')">Cryptocurrency Trading</div>
+                <div class="section-notch"></div>
                 <div class="section-content">
                     <p>Details about Topic 2...</p>
                 </div>
             </div>
             <div class="section" id="section3">
                 <div class="section-header" onclick="toggleSection('section3')">Business</div>
+                <div class="section-notch"></div>
                 <div class="section-content">
                     <p>Details about Topic 3...</p>
                 </div>
@@ -48,3 +58,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
